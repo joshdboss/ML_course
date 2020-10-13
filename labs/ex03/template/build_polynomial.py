@@ -16,7 +16,7 @@ def build_poly(x, degree):
         basis (N x degree): a polynomial basis on the output variable
     """
     x_expanded = np.tile(x,[degree+1,1]).T #expands the variable to degree of basis
-    powers = np.tile(np.arange(0,degree+1), [x.shape[0],1]) #create the array of powers to raise
+    powers = np.tile(np.arange(0,degree+1), [len(x),1]) #create the array of powers to raise
     basis = np.power(x_expanded, powers)
     
     return basis
